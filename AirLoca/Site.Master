@@ -1,0 +1,231 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AirLoca.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="fr" class="h-100">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Mon ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,700|Source+Sans+Pro&display=swap">
+    <link rel="stylesheet" href="~/Content/lightbox.css" />
+    <link rel="stylesheet" href="~/Content/Animate.css" />
+
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+
+        </asp:ScriptManager>
+
+        <nav class="navbar shadow navbar-expand-md navbar-light bg-light fixed-top">
+            <asp:LinkButton ID="Home" runat="server" class="navbar-brand" OnClick="Home_Click">
+                <h3><span class="fa fa-home" style="color: rgba(101, 199, 247, 0.9);"></span>&nbsp;&nbsp;AirLoca</h3>
+            </asp:LinkButton>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-5" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-list-5">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item mx-4">
+                        <a href="ListHebergement.aspx">Hébergements</a>
+                    </li>
+
+                    <li class="nav-item mx-4">
+                        <a href="CreerCompte.aspx">Inscription</a>
+                    </li>
+
+                    <li class="nav-item mx-4">
+                        <a href="Connexion.aspx">Se Connecter</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="container body-content">
+            <!--On peut mettre un label pour centraliser les erreurs-->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="page-footer font-small bg-light w-100 mt-5 lighten-5">
+
+            <div>
+                <div class="container">
+
+                    <!-- Grid row-->
+                    <div class="row py-4 d-flex align-items-center">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                            <h6 class="mb-0">Suivez nous sur les réseaux sociaux !</h6>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                            <!-- Facebook -->
+                            <a class="fb-ic">
+                                <i class="fab fa-facebook-f white-text mr-4"></i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="tw-ic">
+                                <i class="fab fa-twitter white-text mr-4"></i>
+                            </a>
+                            <!-- Google +-->
+                            <a class="gplus-ic">
+                                <i class="fab fa-google-plus-g white-text mr-4"></i>
+                            </a>
+                            <!--Linkedin -->
+                            <a class="li-ic">
+                                <i class="fab fa-linkedin-in white-text mr-4"></i>
+                            </a>
+                            <!--Instagram-->
+                            <a class="ins-ic">
+                                <i class="fab fa-instagram white-text"></i>
+                            </a>
+
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row-->
+
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+
+                <!-- Grid row -->
+                <div class="row mt-3 dark-grey-text">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold">AirLoca</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            Et Rheni grandinis Romani grandinis convolantibus supercilia telis undique vi ritu vetabantur nive ubi pontem.                           
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Hébergement</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a class="dark-grey-text" href="#!">Devenir hôte</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Communité</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">FAQs</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Aide</a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Liens utiles</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a class="dark-grey-text" href="#!">Mon compte</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Confiance et sécurité</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">FAQs</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Nous soutenir</a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <i class="fas fa-home mr-3"></i>Paris, 75012, FR
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i>airloca@example.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i>+33 00 11 22 33 44
+                        </p>
+                        <p>
+                            <i class="fas fa-print mr-3"></i>+33 00 11 22 33 77
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center text-black-50 py-3">
+                &copy; <%: DateTime.Now.Year %> Copyright:
+    <a class="dark-grey-text">Fabio C.</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <script src="./Scripts/bootstrap-notify.js"></script>
+    </form>
+</body>
+</html>
